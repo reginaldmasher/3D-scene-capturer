@@ -3,15 +3,14 @@
 
 class ImageContainer
 {
-		const string home_path = "/home/reginald/Pictures/Masters/living_room_traj0_frei_png/rgb";	
-		const string hv_path = "";
-		string curr_path;
-		int set_size = 1509;
+		const std::string home_dataset0 = "/home/reginald/Pictures/Masters/living_room_traj0_frei_png/rgb/";	
+		const std::string hv_dataset0;
+		std::string curr_path;
+		int set_size;
+		std::string pathCreator(int index);
 	public:
-        vector<MAT> imageset;
-		void setCurrPath(string path);
-		string pathCreator(int index);
-		void loadImageSet();    
-}
+		ImageContainer(bool inhypervision, int data_set);	
+		std::vector<cv::Mat> loadImageSet();    
+};
 
 #endif
